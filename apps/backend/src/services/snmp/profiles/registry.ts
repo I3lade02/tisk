@@ -2,8 +2,13 @@ import type { ParsedPrinterData, PrinterProfile } from "./base.js";
 import type { PrinterSummary } from "@tisk/shared";
 
 import { developIneo250iProfile } from "./developIneo250iProfile.js";
+import { developIneo224eProfile, developIneo227Profile } from "./developIneoLegacyProfiles.js";
 
-const profiles: PrinterProfile[] = [developIneo250iProfile];
+const profiles: PrinterProfile[] = [
+  developIneo250iProfile,
+  developIneo227Profile,
+  developIneo224eProfile
+];
 
 export function resolvePrinterProfile(
   printer: PrinterSummary,
