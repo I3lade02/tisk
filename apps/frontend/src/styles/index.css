@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color: #1f2a2f;
+    background:
+      radial-gradient(circle at top left, rgba(15, 118, 110, 0.12), transparent 28%),
+      radial-gradient(circle at top right, rgba(201, 115, 22, 0.08), transparent 24%),
+      linear-gradient(180deg, #f7f3ec 0%, #f1ede5 100%);
+    font-family: Aptos, "Segoe UI Variable", "Segoe UI", "Noto Sans", sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+  pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply rounded-3xl border border-line/80 bg-panel/90 shadow-panel backdrop-blur-sm;
+  }
+
+  .field {
+    @apply w-full rounded-2xl border border-line bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/15;
+  }
+
+  .label {
+    @apply mb-2 block text-xs font-semibold uppercase tracking-[0.2em] text-slate-500;
+  }
+
+  .button-primary {
+    @apply inline-flex items-center justify-center rounded-2xl bg-accent px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-accent/90 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .button-secondary {
+    @apply inline-flex items-center justify-center rounded-2xl border border-line bg-white px-4 py-2.5 text-sm font-semibold text-ink transition hover:border-accent/40 hover:bg-accent/5 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .button-danger {
+    @apply inline-flex items-center justify-center rounded-2xl bg-danger px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-danger/90 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+}

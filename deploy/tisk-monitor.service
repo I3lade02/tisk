@@ -1,0 +1,18 @@
+[Unit]
+Description=Tisk Monitor backend
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+WorkingDirectory=/opt/tisk-monitor
+Environment=NODE_ENV=production
+ExecStart=/usr/bin/npm run start -w @tisk/backend
+Restart=always
+RestartSec=5
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target

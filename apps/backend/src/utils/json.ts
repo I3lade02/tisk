@@ -1,0 +1,15 @@
+export function safeJsonParse<T>(value: string | null | undefined): T | null {
+  if (!value) {
+    return null;
+  }
+
+  try {
+    return JSON.parse(value) as T;
+  } catch {
+    return null;
+  }
+}
+
+export function safeJsonStringify(value: unknown): string {
+  return JSON.stringify(value);
+}

@@ -1,0 +1,25 @@
+{
+  "name": "tisk-monitor",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Lokální monitoring síťových tiskáren přes SNMP pro interní síť a Raspberry Pi.",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run build -w @tisk/shared && concurrently -n backend,frontend -c green,blue \"npm run dev -w @tisk/backend\" \"npm run dev -w @tisk/frontend\"",
+    "dev:backend": "npm run build -w @tisk/shared && npm run dev -w @tisk/backend",
+    "dev:frontend": "npm run build -w @tisk/shared && npm run dev -w @tisk/frontend",
+    "build": "npm run build -w @tisk/shared && npm run build -w @tisk/backend && npm run build -w @tisk/frontend",
+    "check": "npm run check -w @tisk/shared && npm run check -w @tisk/backend && npm run check -w @tisk/frontend",
+    "seed": "npm run seed -w @tisk/backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=22.0.0",
+    "npm": ">=10.0.0"
+  }
+}
