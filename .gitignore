@@ -3,7 +3,11 @@ dist
 coverage
 .DS_Store
 .env
+*.tsbuildinfo
 apps/backend/data
 apps/frontend/dist
+apps/frontend/src/**/*.js
+apps/frontend/*.js
+apps/frontend/*.d.ts
 packages/shared/dist
 npm-debug.log*
